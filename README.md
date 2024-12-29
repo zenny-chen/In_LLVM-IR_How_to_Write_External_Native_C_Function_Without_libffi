@@ -244,8 +244,7 @@ static auto CreateExternFuncCalleeTestFunction(Module *m, LLVMContext &context) 
     // Create the test function and insert it into module M. This function is said
     // to return an int and take an int parameter.
     // Specify the function prototype.
-    // Generate in interpreter mode: define i32 @testFunc(i32 %argX, ptr %argY) {
-    // Generate in JIT mode: define i32 @testFunc(i32 %argX) {
+    // Generate: define i32 @testFunc(i32 %argX) {
     FunctionType* const testFuncType = FunctionType::get(Type::getInt32Ty(context),   // the return type
                                                    { Type::getInt32Ty(context) }, // parameter list types
                                                    false    // Indicates not variable argument list
